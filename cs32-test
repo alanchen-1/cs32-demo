@@ -9,7 +9,7 @@ if [ ! .mvn-classpath -nt pom.xml ]; then
   # (we have some deps that may not be required by the project itself,
   # e.g. org.json, jopt-simple, so we cannot assume that everything is
   # already installed)
-  mvn -B install
+  mvn -B -q install
   mvn -B dependency:build-classpath -Dmdep.outputFile=.mvn-classpath -q
 fi
 
