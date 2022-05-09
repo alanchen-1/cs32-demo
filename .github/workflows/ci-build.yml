@@ -5,8 +5,12 @@ name: Maven/cs32-test CI
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-    linux-build:
-        runs-on: ubuntu-latest
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+          matrix:
+            os: [ubuntu-latest, windows-latest, macos-latest]
+
         steps:
             - uses: actions/checkout@v3
             - name: Setup Java 11
