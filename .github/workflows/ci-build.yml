@@ -31,10 +31,10 @@ jobs:
             - name: Run cs32-test
               # run cs32-test with no web
               run: ./cs32-test -nw
-   coverage:
-       needs: build
-       runs-on: ubuntu-latest
-       steps:
+    coverage:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
            - uses: actions/checkout@v3
            - name: use codecov bot
              uses: codecov/codecov-action@v1
