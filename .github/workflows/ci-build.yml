@@ -29,8 +29,6 @@ jobs:
               run: chmod +x ./cs32-test
             - name: make ./run executable
               run: chmod +x ./run
-            - name: try running ./run
-              run: ./run
             - name: run cs32-test
               # run cs32-test with no web
               run: ./cs32-test -nw
