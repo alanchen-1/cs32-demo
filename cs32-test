@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Try to get the classpath for the tester. If already configured previously,
+# it should be in the .tester-internal/.mvn-classpath file.
+cd .tester-internal
+
+if [ ! .mvn-classpath -nt pom.xml ]; then
+  # since no .mvn-classpath is present, assume deps not installed yet
+  # (we have some deps that may not be required by the project itself,
+  # e.g. org.json, jopt-simple, so we cannot assume that everything is
+  # already installed)
+  mvn install
+  mvn dependency:build-classpath -Dmdep.outputFile=.mvn-classpath -q
+fi
+
+CP=$(cat .mvn-classpath)
+cd ..
+
+# No guarantees yet, but we're trying to support Windows, which uses a
+# different Path Separator in classpaths.
+PATHSEP=":"
+if [ "$OSTYPE" = 'cygwin' -o "$OSTYPE" = 'msys' ]; then
+    PATHSEP=";"
+fi
+
+java -ea -cp ".tester-internal/tester.jar$PATHSEP$CP" edu.brown.cs.student.main.Main "$@"

@@ -1,0 +1,21 @@
+TEST "lots of errors":
+-INPUT:
+addd 5 3
+asdf 2 3
+add 2
+multiply 5 3 4
+add "str"
+-OUTPUT:
+ERROR:
+END
+
+TEST "text after errors":
+-INPUT:
+addd 2 4
+asdf 9 9
+add 2
+add 2 2
+-OUTPUT:
+ERROR:
+4
+END

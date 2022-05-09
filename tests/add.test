@@ -1,0 +1,21 @@
+TEST "positive":
+-INPUT:
+add 5 3
+add 0 2
+-OUTPUT:
+8
+2
+END
+
+TEST "negative":
+-INPUT:
+add -2 -3
+-OUTPUT:
+-5
+
+TEST:
+-INPUT:
+add 0 0
+-OUTPUT:
+0
+END

@@ -1,0 +1,29 @@
+TEST "positive":
+-INPUT:
+multiply 5 3
+multiply 0 2
+-OUTPUT:
+15
+0
+END
+
+TEST "negative":
+-INPUT:
+multiply -2 -3
+-OUTPUT:
+6
+END
+
+TEST "neg pos":
+-INPUT:
+multiply -2 3
+-OUTPUT:
+-6
+END
+
+TEST:
+-INPUT:
+multiply 0 0
+-OUTPUT:
+0
+END

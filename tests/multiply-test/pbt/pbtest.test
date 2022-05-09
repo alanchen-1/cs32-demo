@@ -1,0 +1,13 @@
+TEST "pbt should fail":
+-INPUT:
+multiply 5 3
+-PBT:
+tests/multiply-test/pbt/FailsIfOdd.java
+END
+
+TEST "pbt should pass":
+-INPUT:
+multiply 5 4
+-PBT:
+tests/multiply-test/pbt/FailsIfOdd.java
+END

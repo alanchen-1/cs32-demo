@@ -1,0 +1,10 @@
+target/
+.mvn-classpath
+.classpath
+.project
+.idea/
+**.DS_Store**
+*.prefs
+# ignore security config files
+config/secret/*
+integration-jacoco

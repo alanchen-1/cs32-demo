@@ -1,0 +1,35 @@
+TEST "middle line fail":
+-INPUT:
+add 5 3
+add 9 4
+multiply 2 3
+-OUTPUT:
+8
+14
+6
+END
+
+TEST "multiple sequences fail":
+-INPUT:
+add 1 1
+add 1 1
+add 1 1
+add 1 1
+add 1 1
+add 1 1
+add 1 1
+add 1 1
+add 1 1
+add 1 1
+-OUTPUT:
+2
+1
+2
+2
+2
+1
+1
+2
+2
+1
+END
