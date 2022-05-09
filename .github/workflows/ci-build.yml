@@ -23,6 +23,8 @@ jobs:
               run: mvn --batch-mode --update-snapshots package
             - name: make cs32-test executable
               run: chmod +x ./cs32-test
+            - name: make ./run executable
+              run: chmod +x ./run
             - name: run cs32-test
               # run cs32-test with no web
               run: ./cs32-test -nw
