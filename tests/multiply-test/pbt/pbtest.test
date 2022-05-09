@@ -11,3 +11,10 @@ multiply 5 4
 -PBT:
 tests/multiply-test/pbt/FailsIfOdd.java
 END
+
+TEST "Check shuffle_top_3 prints top 3 things":
+-PBT:
+tests/must_print_top_3_items.py
+-INPUT:
+shuffle_top_3 9 18 10 32 -58 17 -8
+END
