@@ -9,10 +9,11 @@ java -jar jacococli.jar merge $(find jacoco/*.exec) --destfile jacoco/merged.exe
 # clean out the old report
 rm -rf ../integration-jacoco
 
-# Generate the new HTML report
+# Generate the new HTML report, can change paths later
 java -jar jacococli.jar report jacoco/merged.exec --classfiles ../target/classes --html ../integration-jacoco/
+java -jar jacococli.jar report jacoco/merged.exec --classfiles ../target/classes --xml ../.tester-internal/jacoco-report.xml
 
-# Clean out all of the old exec files form the directory
+# Clean out all of the old exec files from the directory
 rm $(find jacoco/*.exec)
 
 cd ..
