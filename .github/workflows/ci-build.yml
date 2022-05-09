@@ -37,7 +37,9 @@ jobs:
         steps:
            - uses: actions/checkout@v3
            - name: use codecov bot
-             uses: codecov/codecov-action@v1
+             uses: codecov/codecov-action@v2
              with:
+                 token: ${{ secrets.CODECOV_TOKEN }}
                  file: ./.tester-internal/jacoco-report.xml
-                 name: codecov
+                 name: jacoco-codecov
+                 fail_ci_if_error: true
