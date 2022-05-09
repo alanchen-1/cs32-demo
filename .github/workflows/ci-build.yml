@@ -20,7 +20,11 @@ jobs:
               run: mvn clean
             - name: Package Maven
               # package maven
-              run: mvn --batch-mode --update-snapshots package | pwd | ls -al
+              run: mvn --batch-mode --update-snapshots package
+            - name: debug path
+              run: pwd && ls
+            - name: try running ./run
+              run: ./run
             - name: make cs32-test executable
               run: chmod +x ./cs32-test
             - name: make ./run executable
