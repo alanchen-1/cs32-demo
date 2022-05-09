@@ -39,7 +39,6 @@ jobs:
            - name: use codecov bot
              uses: codecov/codecov-action@v2
              with:
-                 token: ${{ secrets.CODECOV_TOKEN }}
                  file: ./.tester-internal/jacoco-report.xml
                  name: jacoco-codecov
                  fail_ci_if_error: true
