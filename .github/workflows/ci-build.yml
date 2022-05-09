@@ -5,9 +5,8 @@ name: Maven/cs32-test CI
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-    linux-package:
+    linux-build:
         runs-on: ubuntu-latest
-
         steps:
             - uses: actions/checkout@v3
             - name: Setup Java 11
@@ -15,20 +14,16 @@ jobs:
               with:
                   java-version: '11'
                   distribution: 'adopt'
-            - name:  Clean Maven
+            - name: Maven Clean
               # clean repository 
-              run: mvn clean
+              run: mvn --batch-mode clean
             - name: Package Maven
               # package maven
               run: mvn --batch-mode --update-snapshots package
-            - name: debug path
-              run: pwd && ls
-            - name: see where . is
-              run: cd . && pwd
-            - name: make cs32-test executable
+            - name: Make cs32-test executable
               run: chmod +x ./cs32-test
-            - name: make ./run executable
+            - name: Make ./run executable
               run: chmod +x ./run
-            - name: run cs32-test
+            - name: Run cs32-test
               # run cs32-test with no web
               run: ./cs32-test -nw
