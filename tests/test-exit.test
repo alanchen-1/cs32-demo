@@ -1,0 +1,8 @@
+TEST "exit":
+-INPUT:
+add 5 3
+exit
+-OUTPUT:
+8
+Exiting.
+END

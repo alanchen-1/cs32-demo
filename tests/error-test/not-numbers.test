@@ -1,0 +1,13 @@
+TEST "add not number":
+-INPUT:
+add 5 hi
+-OUTPUT:
+ERROR:
+END
+
+TEST "multiply not number":
+-INPUT:
+multiply 5 hi
+-OUTPUT:
+ERROR:
+END

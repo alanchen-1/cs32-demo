@@ -39,6 +39,7 @@ public class REPL {
             break;
           } catch (NumberFormatException err) {
             System.out.println("ERROR: error parsing numbers");
+            break;
           }
         case "exit":
           running = false;

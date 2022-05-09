@@ -11,6 +11,7 @@ if [ ! .mvn-classpath -nt pom.xml ]; then
   # already installed)
   mvn -B -q install
   mvn -B dependency:build-classpath -Dmdep.outputFile=.mvn-classpath -q
+  echo "Maven dependencies successfully installed."
 fi
 
 CP=$(cat .mvn-classpath)
