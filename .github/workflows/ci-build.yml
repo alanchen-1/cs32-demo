@@ -1,4 +1,4 @@
-name: Maven CI
+name: Maven/cs32-test CI
 
 # triggers on push or pull request
 # or can be run manually from Actions tab
@@ -21,6 +21,8 @@ jobs:
             - name: Package Maven
               # package maven
               run: mvn --batch-mode --update-snapshots package
+            - name: make cs32-test executable
+              run: chmod +x ./cs32-test
             - name: run cs32-test
               # run cs32-test with no web
               run: ./cs32-test -nw
