@@ -15,7 +15,9 @@ jobs:
               with:
                   java-version: '11'
                   distribution: 'adopt'
-            - name: Package Maven
-              # clean repository and then package
+            - name:  Clean Maven
+              # clean repository 
               run: mvn clean
+            - name: Package Maven
+              # package maven
               run: mvn --batch-mode --update-snapshots package
