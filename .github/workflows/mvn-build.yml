@@ -21,3 +21,6 @@ jobs:
             - name: Package Maven
               # package maven
               run: mvn --batch-mode --update-snapshots package
+            - name: run cs32-test
+              # run cs32-test with no web
+              run: ./cs32-test -nw
