@@ -23,8 +23,8 @@ jobs:
               run: mvn --batch-mode --update-snapshots package
             - name: debug path
               run: pwd && ls
-            - name: try running ./run
-              run: ./run
+            - name: see where . is
+              run: cd . && pwd
             - name: make cs32-test executable
               run: chmod +x ./cs32-test
             - name: make ./run executable
