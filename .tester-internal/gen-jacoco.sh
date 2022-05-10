@@ -17,4 +17,3 @@ java -jar jacococli.jar report jacoco/merged.exec --classfiles ../target/classes
 rm $(find jacoco/*.exec)
 
 cd ..
-
