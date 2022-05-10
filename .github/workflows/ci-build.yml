@@ -34,7 +34,7 @@ jobs:
               run: chmod +x ./run
             - name: Run cs32-test
               # run cs32-test with no web
-              run: ./cs32-test -nw
+              run: ./cs32-test -nw -rt
     coverage:
         needs: build
         runs-on: ubuntu-latest
