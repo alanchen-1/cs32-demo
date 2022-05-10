@@ -36,8 +36,9 @@ jobs:
               # run all tests with no web
               run: ./cs32-test -nw -rt
     coverage:
+        if: ${{ always() }}
+        needs: build
         runs-on: ubuntu-latest
-
         steps:
             - uses: actions/checkout@v3
             - name: Setup Python 3
@@ -60,12 +61,12 @@ jobs:
             - name: Make ./run executable
               run: chmod +x ./run
             - name: Run cs32-test
-              # run all tests with no web allowing fail
               run: ./cs32-test -nw -rt
               continue-on-error: true
-           - name: use codecov bot
-             uses: codecov/codecov-action@v2
-             with:
-                 file: ./.tester-internal/jacoco-report.xml
-                 name: jacoco-codecov
-                 fail_ci_if_error: true
+            - name: use codecov bot
+              uses: codecov/codecov-action@v2
+              with:
+                  file: ./.tester-internal/jacoco-report.xml
+                  name: jacoco-codecov
+                  fail_ci_if_error: true
+
