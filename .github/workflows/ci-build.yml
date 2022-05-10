@@ -36,8 +36,8 @@ jobs:
               # run all tests with no web
               run: ./cs32-test -nw -rt
     coverage:
-        # generate coverage report. exact same as build, but allows cs32-test to fail
         runs-on: ubuntu-latest
+
         steps:
             - uses: actions/checkout@v3
             - name: Setup Python 3
@@ -60,7 +60,7 @@ jobs:
             - name: Make ./run executable
               run: chmod +x ./run
             - name: Run cs32-test
-              # run all tests with no web, allow it to fail to get to coverage
+              # run all tests with no web allowing fail
               run: ./cs32-test -nw -rt
               continue-on-error: true
            - name: use codecov bot
