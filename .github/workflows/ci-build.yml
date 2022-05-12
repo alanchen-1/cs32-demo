@@ -61,7 +61,7 @@ jobs:
             - name: Make ./run executable
               run: chmod +x ./run
             - name: Run cs32-test
-              run: ./cs32-test -nw -rt
+              run: ./cs32-test -nw
               continue-on-error: true
             - name: use codecov bot
               uses: codecov/codecov-action@v2
